@@ -1,0 +1,6 @@
+#!/bin/sh
+(cd bigint ;
+ gcc -g -Wall -std=c99 -pedantic -o bigint.o -c bigint.c ;
+ ar -crs libbigint.a bigint.o)
+gcc -g -Wall -std=c99 -pedantic -Ibigint -Lbigint -o njvm aufgabe6.c -lbigint
+
